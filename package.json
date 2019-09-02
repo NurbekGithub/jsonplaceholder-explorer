@@ -8,6 +8,7 @@
     "@material-ui/lab": "^4.0.0-alpha.25",
     "axios": "^0.19.0",
     "formik": "^1.5.8",
+    "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
@@ -19,7 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "e2e:open": "cypress open"
+    "e2e:open": "cypress open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
