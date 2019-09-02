@@ -13,5 +13,5 @@ it("Opens app on localhost:3000", () => {
   cy.getByText(/users/);
 
   // content
-  cy.getByText("Welcome to jsonplaceholder");
+  cy.getByText(/Welcome to jsonplaceholder/i);
 });
