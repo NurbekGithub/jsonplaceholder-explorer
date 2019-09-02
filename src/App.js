@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import Header from "./components/Header";
+import { CssBaseline, LinearProgress } from "@material-ui/core";
+import HomePage from "./modules/HomePage";
+import PostsPage from "./modules/PostsPage";
+import CommentsPage from "./modules/CommentsPage";
+import AlbumsPage from "./modules/AlbumsPage";
+import PhotosPage from "./modules/PhotosPage";
+import TodosPage from "./modules/TodosPage";
+import UsersPage from "./modules/UsersPage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main style={{ marginTop: "64px" }}>
+        <Suspense fallback={<LinearProgress color="secondary" />}>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/posts" component={PostsPage} />
+            <Route exact path="/comments" component={CommentsPage} />
+            <Route exact path="/albums" component={AlbumsPage} />
+            <Route exact path="/photos" component={PhotosPage} />
+            <Route exact path="/todos" component={TodosPage} />
+            <Route exact path="/users" component={UsersPage} />
+          </Switch>
+        </Suspense>
+      </main>
+      <CssBaseline />
     </div>
   );
 }
