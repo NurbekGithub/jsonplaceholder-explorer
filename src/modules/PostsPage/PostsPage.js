@@ -24,10 +24,10 @@ export default function PostsPage() {
               .fill(null)
               .map((_, idx) => (
                 <ListItem key={idx} divider>
-                  <ListItemText
-                    primary={<Skeleton height={6} width="80%" />}
-                    secondary={<Skeleton height={6} width="100%" />}
-                  />
+                  <div className="w-100">
+                    <Skeleton height={6} width="80%" />
+                    <Skeleton height={6} width="100%" />
+                  </div>
                 </ListItem>
               ))
           : state.posts.map(post => {
