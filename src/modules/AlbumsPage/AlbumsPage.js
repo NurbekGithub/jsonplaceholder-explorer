@@ -12,7 +12,7 @@ export default function AlbumsPage() {
   }, []);
   return (
     <div>
-      <Typography variant="h2">Albums</Typography>
+      <Typography variant="h1">Albums</Typography>
       <List>
         {albums.map(album => {
           return (
